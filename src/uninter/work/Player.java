@@ -2,15 +2,15 @@ package uninter.work;
 
 import java.util.Scanner;
 
-public class Jogador {
-//Deve controlar a leitura das jogadas do jogador humano
-	
+public class Player {
+	// Deve controlar a leitura das jogadas do jogador humano
+
 	public static void vezDoJogador(char[][] tabuleiro, Scanner scanner) {
 		String movimentoJogador;
 		while (true) {
 			System.out.println("Escolha onde você quer jogar, digite um número de 1 a 9: ");
 			movimentoJogador = scanner.nextLine();
-			if (movimentoValido(tabuleiro, movimentoJogador)){
+			if (movimentoValido(tabuleiro, movimentoJogador)) {
 				break;
 			} else {
 				System.out.println(movimentoJogador + " não é uma opção válida");
@@ -18,9 +18,9 @@ public class Jogador {
 		}
 		posicaoMovimento(tabuleiro, movimentoJogador, 'X');
 	}
-	
-	private static boolean movimentoValido (char[][] tabuleiro, String posicao) {
-		switch(posicao) {
+
+	private static boolean movimentoValido(char[][] tabuleiro, String posicao) {
+		switch (posicao) {
 			case "1":
 				return (tabuleiro[0][0] == ' ');
 			case "2":
@@ -43,9 +43,9 @@ public class Jogador {
 				return false;
 		}
 	}
-	
+
 	private static void posicaoMovimento(char[][] tabuleiro, String posicao, char simbolo) {
-		switch(posicao) {
+		switch (posicao) {
 			case "1":
 				tabuleiro[0][0] = simbolo;
 				break;
@@ -77,6 +77,5 @@ public class Jogador {
 				System.out.println(":(");
 		}
 	}
-	
-	
+
 }
